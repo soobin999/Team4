@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bit.camp.com.model.dao.ManagerDao">
+	<resultMap type="bit.camp.com.VO.mybatis.RsrvlistDTO" id="rsvlistdto">
+		<result property="ReservationCount" column="reservation.ReservationCount" javaType="int"/>
+		<result property="CustomerName" column="Customer.CustmerName" javaType="String"/>
+		<result property="Roomtype" column="Roomtype.RoomType" javaType="String"/>
+		<result property="RoomNumber" column="Room.RoomNumber" javaType="int"/>
+		<result property="ReservationStartDate" column="Reservation.ReservationStartDate" javaType="java.sql.Date" jdbcType="DATE"/>
+		<result property="ReservationFinishDate" column="Reservation.ReservationFinishDate" javaType="java.sql.Date" jdbcType="DATE"/>
+		<result property="reservationedit" column="reservationedit.EditState"/>
+
+	</resultMap>
+	<!-- 예약리스트 띄우기 -->
+	<select id="getAllReservation" resultMap="resvdto">
+	
+		SELECT reservation.ReservationCount, customer.CustomerName,
+		roomtype.RoomType, room.RoomNumber, reservation.ReservationStartDate,
+		reservation.ReservationFinishDate, reservationedit.editstate
+		FROM reservation, room, roomType, customer, reservationedit
+		WHERE reservation.RoomCount = room.roomCount 
+		AND room.RoomTypeCount = roomType.RoomTypeCount
+		AND customer.CustomerCount = reservation.CustomerCount
+		AND reservation.EditCode = reservationedit.EditCode
+	
+	</select>
+</mapper> 
