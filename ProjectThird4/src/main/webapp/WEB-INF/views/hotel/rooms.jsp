@@ -56,8 +56,8 @@
                 <li><a href="/about-us">About Us</a></li>
                 <li><a href="/pages">MyPages</a>
                     <ul class="dropdown">
-                        <li><a href="#">예약확인</a></li>
-                        <li><a href="#">개인정보수정</a></li>
+                        <li><a href="/reservationconfirm">예약확인</a></li>
+                        <li><a href="/customermodify">개인정보수정</a></li>
                     </ul>
                 </li>
             </ul>
@@ -126,8 +126,8 @@
 									<li><a href="/about-us">About Us</a></li>
 									<li><a href="/pages">MyPages</a>
 										<ul class="dropdown">
-											<li><a href="#">예약확인</a></li>
-											<li><a href="#">개인정보수정</a></li>
+											<li><a href="/reservationconfirm">예약확인</a></li>
+											<li><a href="/customermodify">개인정보수정</a></li>
 										</ul></li>
 								</ul>
 							</nav>

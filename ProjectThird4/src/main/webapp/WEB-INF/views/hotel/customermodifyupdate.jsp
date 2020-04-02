@@ -83,8 +83,9 @@
 				<li><a href="/about-us">About Us</a></li>
 				<li><a href="/pages">MyPages</a>
 					<ul class="dropdown">
+						<li><a href="/room-details"></a></li>
 						<li><a href="/reservationconfirm">예약확인</a></li>
-						<li><a href="/customermodify">개인정보수정</a></li>
+						<li><a href="/personalinfomodify">개인정보수정</a></li>
 					</ul></li>
 			</ul>
 		</nav>
@@ -151,7 +152,7 @@
 									<li><a href="/pages">MyPages</a>
 										<ul class="dropdown">
 											<li><a href="/reservationconfirm">예약확인</a></li>
-											<li><a href="/customermodify">개인정보수정</a></li>
+											<li><a href="/personalinfomodify">개인정보수정</a></li>
 										</ul></li>
 
 								</ul>
@@ -169,8 +170,13 @@
 	<!-- 여기에 사이에 만들면 됩니다. -->
 
 
-
-
+	수정한 내용이 업데이트 됨(보류)
+  
+  <form action="/customermodifyupdate">
+  <input type="text" name="userID"> 
+  <button type="submit"></button>
+  
+  </form>
 
 
 

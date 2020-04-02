@@ -168,11 +168,24 @@
 	<!-- Header End -->
 	<!-- 여기에 사이에 만들면 됩니다. -->
 
+	<div class="mypage title" style="margin: 100px 20px 10px 380px;">
+		<style></style>
+		<span class="kt-portlet__head-icon"> </span>
+		<h3 class="kt-portlet__head-title">My page</h3>
+	</div>
 
+	<div class="mypage-id" style="margin: 50px 20px 5px 380px;">
+		<label style="font-weight: bold;">아이디: </label> ${Customer.customerID}
+	</div>
+	<div class="mypage-name"  style="margin: 10px 20px 5px 380px;">
+		<label style="font-weight: bold;">성함: </label> ${Customer.customerName}
+	</div>
+	<div class="row kt-margin-b-20">
+		<div class="mypage-phone"  style="margin: 10px 20px 200px 380px;">
+			<label style="font-weight: bold;">핸드폰번호: </label> ${Customer.customerPhoneNumber}
+		</div>
 
-
-
-
+	</div>
 
 
 	<!-- 여기에 사이에 만들면 됩니다. -->

@@ -168,11 +168,42 @@
 	<!-- Header End -->
 	<!-- 여기에 사이에 만들면 됩니다. -->
 
+	<!--<form action="/customermodifyupdate" method="post">
+		<label class=control-label for="customerId">아이디</label>
+		${Customer.customerId } <label class=control-label for="customerPW">비밀번호</label>
+		<input type="text" id="customerPW" name="customerPW"
+			value="${Customer.customerPW }" />
+		<button type="submit"></button>
+
+	</form>  -->
 
 
-
-
-
+	<div class="col-lg-4">
+		<div class="contact-text">
+			<h2>개인정보 수정</h2>
+			<br>
+			<table>
+				<tbody>
+					<tr>
+						<td class="c-o">회원 아이디:</td>
+						<td>${Customer.customerId }, 아이디</td>
+					</tr>
+					<tr>
+						<td class="c-o">Phone:</td>
+						<td>(12) 345 67890</td>
+					</tr>
+					<tr>
+						<td class="c-o">Email:</td>
+						<td>info.colorlib@gmail.com</td>
+					</tr>
+					<tr>
+						<td class="c-o">Fax:</td>
+						<td>+(12) 345 67890</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 
 
 	<!-- 여기에 사이에 만들면 됩니다. -->
