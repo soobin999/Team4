@@ -1,6 +1,7 @@
 package bit.camp.com.VO.mybatis;
 
 import org.apache.ibatis.type.Alias;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -16,22 +17,26 @@ public class Room {
 	public Room getRoom() {
 		return new Room();
 	}
+	private int roomCount;
 	private int roomNumber, roomPrice, roomPerson;
 	private String roomPicture,roomInformation;
 	private boolean reservationState;
-	private int roomTypeCount;
 
 	public Room() {
 		super();
 	}
-	public Room(int roomNumber,int roomPrice,int roomPerson,String roomPicture,String roomInformation,boolean reservationState,int roomTypeCount) {
+	public Room(int roomCount,int roomNumber,int roomPrice,int roomPerson,String roomPicture,String roomInformation,boolean reservationState,RoomTypeTable roomTypeTable) {
 		super();
+		this.roomCount=roomCount;
 		this.roomNumber=roomNumber;
 		this.roomPrice=roomPrice;
 		this.roomPerson=roomPerson;
 		this.roomPicture=roomPicture;
 		this.reservationState=reservationState;
-		this.roomTypeCount=roomTypeCount;
 		this.roomInformation=roomInformation;
+		this.roomTypeTable=roomTypeTable;
 	}
+	@Autowired(required = false)
+	private RoomTypeTable roomTypeTable;
+	
 }
