@@ -191,7 +191,7 @@
 	<!-- 여기에 사이에 만들면 됩니다. -->
 
 	<!-- Footer Section Begin -->
-	<footer class="footer-section">
+	<footer class="footer-section"> 
 		<div class="container">
 			<div class="footer-text">
 				<div class="row">
