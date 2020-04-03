@@ -1,4 +1,4 @@
-package com.bit.hottel.controller;
+package bit.camp.com.controller;
 
 /*import java.util.Date;*/
 import java.sql.Date;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.bit.hottel.dao.RoomDAO;
-import com.bit.hottel.model.RoomDTO;
-import com.bit.hottel.service.RoomService;
+import bit.camp.com.model.RoomDTO;
+import bit.camp.com.service.RoomService;
+
 
 
 /**

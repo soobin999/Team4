@@ -1,4 +1,4 @@
-package com.bit.hottel.service;
+package bit.camp.com.service;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -9,9 +9,10 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bit.hottel.dao.ReservationDAO;
-import com.bit.hottel.dao.RoomDAO;
-import com.bit.hottel.model.RoomDTO;
+import bit.camp.com.dao.ReservationDAO;
+import bit.camp.com.dao.RoomDAO;
+import bit.camp.com.model.RoomDTO;
+
 
 @Service
 public class RoomService {

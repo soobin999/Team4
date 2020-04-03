@@ -1,11 +1,12 @@
-package com.bit.hottel.dao;
+package bit.camp.com.dao;
 
 /*import java.util.Date;*/
 import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-import com.bit.hottel.model.RoomDTO;
+
+import bit.camp.com.model.RoomDTO;
 
 public interface RoomDAO {
 

@@ -1,4 +1,4 @@
-package com.bit.hottel.model;
+package bit.camp.com.model;
 
 import java.io.Serializable;
 import java.sql.Date;

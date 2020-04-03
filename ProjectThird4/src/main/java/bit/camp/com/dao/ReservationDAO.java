@@ -1,11 +1,9 @@
-package com.bit.hottel.dao;
+package bit.camp.com.dao;
 
 import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
-
-import com.bit.hottel.model.ReservationDTO;
 
 public interface ReservationDAO {
 
