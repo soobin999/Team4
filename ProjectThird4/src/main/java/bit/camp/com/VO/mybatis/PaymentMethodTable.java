@@ -30,7 +30,7 @@ public class PaymentMethodTable {
 		this.paymentMethod=paymentMethod;
 		this.imp_uid=imp_uid;
 		this.merchant_uid=merchant_uid;
-		this.reservationCount=reservationCount;
 		this.reservationDate=reservationDate;
+		this.reservationCount=reservationCount;
 	}
 }

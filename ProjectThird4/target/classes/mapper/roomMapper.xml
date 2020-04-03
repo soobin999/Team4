@@ -1,0 +1,42 @@
+<?xmlversion ="1.0"encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTDMapper3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bit.hottel.dao.RoomDAO">
+	<resultMap type="com.bit.hottel.model.RoomDTO" id="room">
+		<result property="roomCount" column="roomCount" javaType="int" />
+		<result property="roomNumber" column="roomNumber" javaType="int" />
+		<result property="reservationState" column="reservationState" javaType="boolean" />
+		<result property="roomPrice" column="roomPrice" javaType="int" />
+		<result property="roomSalePrice" column="roomSalePrice" javaType="int" />
+		<result property="roomPicture" column="roomPicture" javaType="string" />
+		<result property="roomPerson" column="roomPerson" javaType="int" />
+		<result property="roomTypeCount" column="roomTypeCount" javaType="int" />
+		<result property="roomInformftion" column="roomInformftion" javaType="string" />
+	</resultMap>
+	
+	
+	<select id="getAllRooms" resultType="com.bit.hottel.model.RoomDTO">
+		select * from room
+	</select>
+	
+	<select id="getAvailableStandart" resultType="com.bit.hottel.model.RoomDTO">
+		SELECT * FROM room where roomPerson=2 limit 1;
+	</select>
+	
+	<select id="getAvailableDouble" resultType="com.bit.hottel.model.RoomDTO">
+		SELECT * FROM room where roomPerson=3 limit 1;
+	</select>
+	
+	<select id="getAvailablePremium" resultType="com.bit.hottel.model.RoomDTO">
+		SELECT * FROM room where roomPerson=4 limit 1;
+	</select>
+	
+	<select id="getAvailableFamily" resultType="com.bit.hottel.model.RoomDTO">
+		SELECT * FROM room where roomPerson=6 limit 1;
+	</select>
+	
+	<select id="getAvailableSuite" resultType="com.bit.hottel.model.RoomDTO">
+		SELECT * FROM room where roomPerson=10 limit 1;
+	</select>
+	
+	
+</mapper>

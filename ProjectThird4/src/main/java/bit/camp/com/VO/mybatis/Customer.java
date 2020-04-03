@@ -19,10 +19,12 @@ public class Customer {
 	public Customer getCustomer() {
 		return new Customer();
 	}
+	private int customerCount;
 	private String customerID,customerPW,customerName,customerPhoneNumber,SSNumber;
 	
-	public Customer(String customerID,String customerPW,String customerName,String customerPhoneNumber,String SSNumber) {
+	public Customer(int customerCount,String customerID,String customerPW,String customerName,String customerPhoneNumber,String SSNumber) {
 		super();
+		this.customerCount=customerCount;
 		this.customerID=customerID;
 		this.customerPW=customerPW;
 		this.customerName=customerName;

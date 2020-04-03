@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -23,6 +22,7 @@ import com.google.gson.Gson;
 import bit.camp.com.VO.mybatis.Customer;
 import bit.camp.com.VO.mybatis.PaymentMethodTable;
 import bit.camp.com.VO.mybatis.Reservation;
+import bit.camp.com.VO.mybatis.Room;
 import bit.camp.com.VO.mybatis.RoomTypeTable;
 import bit.camp.com.VO.page.Buyer;
 import bit.camp.com.model.dao.PaymentDao;
@@ -40,6 +40,8 @@ public class Payment {
 
 	@Autowired(required = false)
 	private PaymentDao paymentService;
+	@Autowired(required = false)
+	private Room room;
 	
 	@RequestMapping(value = "payment", method = RequestMethod.POST)
 	public String payment(Model model, Buyer paymentmethod, Reservation reservation, PaymentMethodTable pay)
@@ -60,40 +62,18 @@ public class Payment {
 
 	@PostMapping(value = "/paymentComplete" , produces = "application/text; charset=utf8")
 	@ResponseBody
-	public String payComplete(Reservation reservation,Customer customer,PaymentMethodTable payment,RoomTypeTable roomTypeTable) {
-		log.info("payComplete");
-		log.info(customer);
-		paymentService.selectCustomerCount(customer);
-		log.info(paymentService.selectCustomerCount(customer));
-		reservation.setCustomerCount(paymentService.selectCustomerCount(customer));
-		log.info("reser"+reservation);
-		log.info("-----------");
-		log.info("reser"+reservation);
-		log.info("-----------");
+	public String payComplete(Reservation reservation,PaymentMethodTable payment) {
+		log.info(payment);
+		reservation.getCustomer().setCustomerCount(paymentService.selectCustomerCount(reservation));
+		reservation.getRoom().getRoomTypeTable().setRoomTypeCount(paymentService.selectRoomTypeCount(reservation));
+		
+		reservation.getRoom().setRoomCount(paymentService.selectRoom(reservation).get(paymentService.selectRoomCount(reservation))); 
+		log.info(reservation);
 		paymentService.insertReservation(reservation);
-		log.info("-----------");
 		payment.setReservationCount(paymentService.selectReservationCount());
-		log.info("-----------");
-		System.out.println(payment);
 		paymentService.insertPaymentMethod(payment);
 		return new Gson().toJson("성공");
-		  
 	}
-	@PostMapping(value = "/paymentCompleteTest",produces = "application/text; charset=utf8")
-	@ResponseBody
-	public String vvv (Model model, Customer customer,PaymentMethodTable payment,
-			Reservation reservation, RoomTypeTable roomTypeTable
-			) {
-		
-		ArrayList<Object> list = new ArrayList<Object>();
-		list.add(reservation);
-		list.add(roomTypeTable);
-		list.add(customer);
-		list.add(payment);
-		log.info("log : "+list);
-		return new Gson().toJson(list);
-	}
-	
 	
 	@RequestMapping(value = "/example", method = RequestMethod.GET)
 	public String payementexample(Model model) {
